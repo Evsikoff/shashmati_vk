@@ -1,4 +1,4 @@
-import { loadCloudProgress, saveCloudProgress } from "./yandexSdk";
+import { loadCloudProgress, saveCloudProgress } from "./vkSdk";
 
 const STORAGE_KEY = "shashmaty_progress";
 

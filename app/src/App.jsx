@@ -3,12 +3,10 @@ import MainMenu from "./components/MainMenu";
 import GameScreen from "./components/GameScreen";
 import { loadProgress, saveProgress } from "./utils/progress";
 import {
-  initYandexSdk,
-  notifyLoadingReady,
-  setDocumentLanguage,
-  startGameplay,
-  stopGameplay,
-} from "./utils/yandexSdk";
+  initVkSdk,
+  enableFullscreen,
+  subscribeToConfigUpdates,
+} from "./utils/vkSdk";
 
 export default function App() {
   const [shahs, setShahs] = useState([]);
@@ -20,8 +18,13 @@ export default function App() {
     let isMounted = true;
 
     const bootstrap = async () => {
-      const ysdk = await initYandexSdk();
-      setDocumentLanguage(ysdk);
+      await initVkSdk();
+
+      enableFullscreen();
+
+      subscribeToConfigUpdates((configData) => {
+        console.log("VK config update:", configData);
+      });
 
       const [loadedShahs, loadedProgress] = await Promise.all([
         fetch(import.meta.env.BASE_URL + "data/shahs.json").then((r) => r.json()),
@@ -35,7 +38,6 @@ export default function App() {
       setShahs(loadedShahs);
       setLocalProgress(loadedProgress);
 
-      notifyLoadingReady(ysdk);
       setAppLocked(false);
     };
 
@@ -43,29 +45,14 @@ export default function App() {
 
     return () => {
       isMounted = false;
-      stopGameplay();
     };
   }, []);
-
-  useEffect(() => {
-    if (!shahs.length) {
-      return;
-    }
-
-    if (currentOpponent) {
-      startGameplay();
-      return;
-    }
-
-    stopGameplay();
-  }, [currentOpponent, shahs.length]);
 
   const handleSelectOpponent = (shah) => {
     setCurrentOpponent(shah);
   };
 
   const handleExit = () => {
-    stopGameplay();
     setCurrentOpponent(null);
   };
 

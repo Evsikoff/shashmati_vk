@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "name": "Кир II Великий",
+    "description": "Основатель Персидской империи. В его взгляде читается вековая мудрость и спокойствие камня.",
+    "group": "Древняя Персия",
+    "avatar_path": "\\img\\opponents\\01_cyrus_the_great.png",
+    "strength": 1
+  },
+  {
+    "id": 2,
+    "name": "Дарий I Великий",
+    "description": "Великий администратор. Он просчитывает ходы так же четко, как строил Царскую дорогу.",
+    "group": "Древняя Персия",
+    "avatar_path": "\\img\\opponents\\02_darius_first.png",
+    "strength": 2
+  },
+  {
+    "id": 3,
+    "name": "Ксеркс I",
+    "description": "Царь царей, бросивший вызов Греции. Его амбиции огромны, как его дворцы в Персеполе.",
+    "group": "Древняя Персия",
+    "avatar_path": "\\img\\opponents\\03_xerxes_king.png",
+    "strength": 3
+  },
+  {
+    "id": 4,
+    "name": "Митридат II",
+    "description": "Парфянский монарх, наладивший Шелковый путь. Опасен и хитер в торговле фигурами.",
+    "group": "Парфянское царство",
+    "avatar_path": "\\img\\opponents\\04_mithridates_ii.png",
+    "strength": 4
+  },
+  {
+    "id": 5,
+    "name": "Шапур I",
+    "description": "Победитель римлян. Он привык брать в плен чужих королей, как взял императора Валериана.",
+    "group": "Сасаниды",
+    "avatar_path": "\\img\\opponents\\05_shapur_first.png",
+    "strength": 5
+  },
+  {
+    "id": 6,
+    "name": "Хосров I Ануширван",
+    "description": "Покровитель наук и искусств. Именно при нем шахматы пришли в Персию из Индии.",
+    "group": "Сасаниды",
+    "avatar_path": "\\img\\opponents\\06_khosrow_anushirvan.png",
+    "strength": 6
+  },
+  {
+    "id": 7,
+    "name": "Исмаил I Хатаи",
+    "description": "Поэт и воин в красной чалме кызылбаша. Его стиль игры стремителен и яростен.",
+    "group": "Сефевиды",
+    "avatar_path": "\\img\\opponents\\07_ismail_khatai.png",
+    "strength": 7
+  },
+  {
+    "id": 8,
+    "name": "Аббас I Великий",
+    "description": "Строитель Исфахана. Превращает доску в произведение искусства, загоняя врага в ловушку.",
+    "group": "Сефевиды",
+    "avatar_path": "\\img\\opponents\\08_abbas_great.png",
+    "strength": 8
+  },
+  {
+    "id": 9,
+    "name": "Надир-шах",
+    "description": "Наполеон Востока. Агрессивный тактик, готовый разграбить тылы соперника ради победы.",
+    "group": "Афшариды",
+    "avatar_path": "\\img\\opponents\\09_nader_shah.png",
+    "strength": 9
+  },
+  {
+    "id": 10,
+    "name": "Карим-хан Зенд",
+    "description": "Называет себя просто Слугой. Играет от обороны, предпочитая мир и спокойствие.",
+    "group": "Зенды",
+    "avatar_path": "\\img\\opponents\\10_karim_khan.png",
+    "strength": 10
+  },
+  {
+    "id": 11,
+    "name": "Бабур",
+    "description": "Пришел с гор, чтобы завоевать равнины. Его ходы непредсказуемы, как горные тропы.",
+    "group": "Великие Моголы",
+    "avatar_path": "\\img\\opponents\\11_babur_tiger.png",
+    "strength": 11
+  },
+  {
+    "id": 12,
+    "name": "Акбар I Великий",
+    "description": "Объединитель Индии. Ищет гармонию на доске, сочетая разные стили игры.",
+    "group": "Великие Моголы",
+    "avatar_path": "\\img\\opponents\\12_akbar_great.png",
+    "strength": 12
+  },
+  {
+    "id": 13,
+    "name": "Шах-Джахан",
+    "description": "Создатель Тадж-Махала. Любит красивые комбинации и жертвы ради эстетики победы.",
+    "group": "Великие Моголы",
+    "avatar_path": "\\img\\opponents\\13_shah_jahan.png",
+    "strength": 13
+  },
+  {
+    "id": 14,
+    "name": "Аурангзеб",
+    "description": "Аскет и строгий правитель. Не прощает ошибок и методично уничтожает фигуры врага.",
+    "group": "Великие Моголы",
+    "avatar_path": "\\img\\opponents\\14_aurangzeb.png",
+    "strength": 14
+  },
+  {
+    "id": 15,
+    "name": "Ахмад-шах Дуррани",
+    "description": "Отец современного Афганистана. Его конница быстра, а удары тяжелы.",
+    "group": "Дурранийская империя",
+    "avatar_path": "\\img\\opponents\\15_ahmad_shah.png",
+    "strength": 15
+  },
+  {
+    "id": 16,
+    "name": "Захир-шах",
+    "description": "Последний король Афганистана. Олицетворение «золотого века» и дипломатии.",
+    "group": "Баракзаи",
+    "avatar_path": "\\img\\opponents\\16_zahir_shah.png",
+    "strength": 16
+  },
+  {
+    "id": 17,
+    "name": "Ага-Мухаммед-шах",
+    "description": "Основатель династии Каджаров. Жесток, расчетлив и злопамятен. Опаснейший противник.",
+    "group": "Каджары",
+    "avatar_path": "\\img\\opponents\\17_agha_mohammad.png",
+    "strength": 17
+  },
+  {
+    "id": 18,
+    "name": "Насер ад-Дин Шах",
+    "description": "Любитель Европы и роскоши. Вводит в игру новые технологии, сохраняя старые традиции.",
+    "group": "Каджары",
+    "avatar_path": "\\img\\opponents\\18_naser_al_din.png",
+    "strength": 18
+  },
+  {
+    "id": 19,
+    "name": "Реза-шах Пехлеви",
+    "description": "Железный модернизатор. Его стиль игры — жесткая дисциплина и прямой напор.",
+    "group": "Пехлеви",
+    "avatar_path": "\\img\\opponents\\19_reza_shah.png",
+    "strength": 19
+  },
+  {
+    "id": 20,
+    "name": "Мохаммед Реза Пехлеви",
+    "description": "Последний Шаханшах. Владеет всеми ресурсами империи, сложнейший босс игры.",
+    "group": "Пехлеви",
+    "avatar_path": "\\img\\opponents\\20_mohammad_reza.png",
+    "strength": 20
+  }
+]

@@ -1,4 +1,20 @@
+let lastAdShownAt = 0;
+const AD_COOLDOWN_MS = 30_000;
+
+function canShowAd() {
+  return Date.now() - lastAdShownAt >= AD_COOLDOWN_MS;
+}
+
+function markAdShown() {
+  lastAdShownAt = Date.now();
+}
+
 export const showAd = (onComplete) => {
+  if (!canShowAd()) {
+    onComplete();
+    return;
+  }
+
   const bridge = window.vkBridge;
   if (!bridge) {
     onComplete();
@@ -9,10 +25,9 @@ export const showAd = (onComplete) => {
     .send("VKWebAppShowNativeAds", { ad_format: "interstitial" })
     .then((data) => {
       if (data.result) {
-        onComplete();
-      } else {
-        onComplete();
+        markAdShown();
       }
+      onComplete();
     })
     .catch((error) => {
       console.log("Ad not shown:", error);
@@ -31,6 +46,7 @@ export const showRewardedAd = (onRewarded, onSkipped) => {
     .send("VKWebAppShowNativeAds", { ad_format: "reward" })
     .then((data) => {
       if (data.result) {
+        markAdShown();
         onRewarded();
       } else {
         onSkipped?.();

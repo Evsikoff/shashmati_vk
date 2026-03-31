@@ -13,14 +13,19 @@ export function useChessGame({ opponent, playerColor, onGameEnd }) {
   const mountedRef = useRef(true);
 
   const engineColor = playerColor === "w" ? "b" : "w";
-  const engineSkillLevel = 20; // temporary: force Stockfish to max strength in every game
+
+  // Gradual difficulty ramp: opponents 18-20 match the original first-shah level (depth 7, skill 20).
+  // Earlier opponents scale linearly from very easy to that ceiling.
+  const engineSkillLevel = useMemo(() => {
+    const s = opponent.strength;
+    if (s >= 18) return 20;
+    return Math.round((s - 1) * 20 / 17);
+  }, [opponent.strength]);
 
   const depth = useMemo(() => {
     const s = opponent.strength;
-    // Increase depth to make engine stronger in tactical "First Check" variant
-    if (s <= 5) return 6 + s;
-    if (s <= 10) return 10 + Math.floor(s / 2);
-    return 14 + Math.floor(s / 2);
+    if (s >= 18) return 7;
+    return Math.max(1, Math.round(1 + (s - 1) * 6 / 17));
   }, [opponent.strength]);
 
 

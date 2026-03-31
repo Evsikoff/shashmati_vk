@@ -12,6 +12,7 @@ export default function App() {
   const [shahs, setShahs] = useState([]);
   const [progress, setLocalProgress] = useState(0);
   const [currentOpponent, setCurrentOpponent] = useState(null);
+  const [gameKey, setGameKey] = useState(0);
   const [appLocked, setAppLocked] = useState(true);
 
   useEffect(() => {
@@ -50,6 +51,7 @@ export default function App() {
 
   const handleSelectOpponent = (shah) => {
     setCurrentOpponent(shah);
+    setGameKey((k) => k + 1);
   };
 
   const handleExit = () => {
@@ -74,6 +76,7 @@ export default function App() {
     <div className={appLocked ? "app-root app-locked" : "app-root"}>
       {currentOpponent ? (
         <GameScreen
+          key={gameKey}
           opponent={currentOpponent}
           onExit={handleExit}
           onWin={handleWin}

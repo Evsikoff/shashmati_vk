@@ -54,6 +54,10 @@ export default function App() {
     setGameKey((k) => k + 1);
   };
 
+  const handleRestart = () => {
+    setGameKey((k) => k + 1);
+  };
+
   const handleExit = () => {
     setCurrentOpponent(null);
   };
@@ -80,6 +84,7 @@ export default function App() {
           opponent={currentOpponent}
           onExit={handleExit}
           onWin={handleWin}
+          onRestart={handleRestart}
         />
       ) : (
         <MainMenu

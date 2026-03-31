@@ -3,7 +3,7 @@ import { useChessGame } from "./Board";
 import GameControls from "./GameControls";
 import { showAd } from "../utils/AdsManager";
 
-export default function GameScreen({ opponent, onExit, onWin }) {
+export default function GameScreen({ opponent, onExit, onWin, onRestart }) {
   const [playerColor] = useState(() => (Math.random() < 0.5 ? "w" : "b"));
   const [gameResult, setGameResult] = useState(null);
 
@@ -17,10 +17,6 @@ export default function GameScreen({ opponent, onExit, onWin }) {
     onGameEnd: handleGameEnd,
   });
 
-  const handleRestart = () => {
-    setGameResult(null);
-    boardState.restartGame();
-  };
 
   const handleWinContinue = () => {
     onWin(opponent.id);
@@ -81,7 +77,7 @@ export default function GameScreen({ opponent, onExit, onWin }) {
 
         <GameControls
           onUndo={boardState.undoMove}
-          onRestart={handleRestart}
+          onRestart={onRestart}
           onExit={onExit}
         />
       </div>
@@ -111,7 +107,7 @@ export default function GameScreen({ opponent, onExit, onWin }) {
                   {opponent.name} объявил вам шах. Вы проиграли.
                 </p>
                 <div className="modal-buttons">
-                  <button className="modal-btn primary" onClick={() => showAd(handleRestart)}>
+                  <button className="modal-btn primary" onClick={() => showAd(onRestart)}>
                     Реванш
                   </button>
                   <button className="modal-btn" onClick={() => showAd(onExit)}>
@@ -127,7 +123,7 @@ export default function GameScreen({ opponent, onExit, onWin }) {
                   Партия завершилась вничью.
                 </p>
                 <div className="modal-buttons">
-                  <button className="modal-btn primary" onClick={handleRestart}>
+                  <button className="modal-btn primary" onClick={onRestart}>
                     Заново
                   </button>
                   <button className="modal-btn" onClick={onExit}>
